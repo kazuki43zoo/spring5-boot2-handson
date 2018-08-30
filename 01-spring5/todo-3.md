@@ -239,4 +239,4 @@ Spring MVCでは、DispatcherServletが全リクエストを受け取るので�
 
 # Well done!
 これで演習3は完成です。
-次の演習は[todo-4.md](todo-4.md)に書かれています。
+次の演習は[todo-5.md](../03-boot2/todo-5.md)に書かれています。
