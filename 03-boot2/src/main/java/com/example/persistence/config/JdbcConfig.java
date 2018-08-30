@@ -1,7 +1,6 @@
 package com.example.persistence.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jdbc.core.DataAccessStrategy;
 import org.springframework.data.jdbc.core.DefaultDataAccessStrategy;
@@ -14,9 +13,8 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import javax.sql.DataSource;
 
+// TODO 5-04 何もせずに次へ進む
 @Configuration
-// TODO 5-04 @ComponentScanアノテーションのみ削除する
-@ComponentScan(basePackages = "com.example.persistence.repository.impl")
 @EnableJdbcRepositories(basePackages = "com.example.persistence.repository")
 public class JdbcConfig {
 

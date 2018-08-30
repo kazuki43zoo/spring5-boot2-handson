@@ -32,7 +32,8 @@ spring.datasource.sql-script-encoding=utf-8
 
 # TODO 5-04
 [JdbcConfigクラス](src/main/java/com/example/persistence/config/JdbcConfig.java)は、Spring Data JDBC関連のBeanを定義しています。
-コンポーネントスキャンは`@SpringBootApplication`によって行われるため、`@ComponentScan`を削除してください。
+Spring Data JDBCは、Spring Boot 2.0ではAuto Configuration対象外のため、このJava Configの大半は必要です。
+何もせずに次のTODOに進んでください。
 
 # TODO 5-05
 `NamedParameterJdbcTemplate`のBeanはAuto Configuration対象のため、Spring BootがBeanを作成します。
