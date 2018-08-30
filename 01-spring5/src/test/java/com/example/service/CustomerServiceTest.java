@@ -20,14 +20,8 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-// TODO 2-13 このテストを実行して、CustomerServiceの実装が正しいかチェックする（テストがグリーンになればOK）
 @SpringJUnitConfig(classes = {DataSourceConfig.class, JdbcConfig.class, ServiceConfig.class})
 public class CustomerServiceTest {
 

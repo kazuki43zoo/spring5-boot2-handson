@@ -2,9 +2,7 @@ package com.example.web.config;
 
 import com.example.persistence.config.DataSourceConfig;
 import com.example.persistence.config.JdbcConfig;
-import com.example.security.config.SecurityConfig;
 import com.example.service.config.ServiceConfig;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -29,21 +27,9 @@ public class MvcInitializerTest {
     }
 
     @Test
-    @DisplayName("[Spring Security無し] getServletConfigClasses()がJava Configの配列を返す")
-    // 演習3の時点ではこちらを有効化（演習4ではこちらを無効化）
-    @Disabled("Spring Security有りでテストするため無効化")
+    @DisplayName("getServletConfigClasses()がJava Configの配列を返す")
     public void getServletConfigClassesTest() {
         Class[] expectedClasses = {DataSourceConfig.class, JdbcConfig.class, ServiceConfig.class, MvcConfig.class};
-        Class<?>[] configClasses = mvcInitializer.getServletConfigClasses();
-        assertArrayEquals(expectedClasses, configClasses, "config classes not correct");
-    }
-
-    @Test
-    @DisplayName("[Spring Security有り] getServletConfigClasses()がJava Configの配列を返す")
-    // 演習3の時点ではこちらを無効化（演習4ではこちらを有効化）
-//    @Disabled("Spring Security無しでテストするため無効化")
-    public void getServletConfigClassesTest_withSpringSecurity() {
-        Class[] expectedClasses = {DataSourceConfig.class, JdbcConfig.class, ServiceConfig.class, MvcConfig.class, SecurityConfig.class};
         Class<?>[] configClasses = mvcInitializer.getServletConfigClasses();
         assertArrayEquals(expectedClasses, configClasses, "config classes not correct");
     }

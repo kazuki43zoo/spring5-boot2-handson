@@ -87,7 +87,7 @@ public class MvcConfigTest {
                 () -> assertTrue(templateResolvers.contains(templateResolver)),
                 () -> assertTrue(templateEngine.getEnableSpringELCompiler()),
                 () -> assertArrayEquals(
-                        new String[]{"Java8TimeDialect", "SpringSecurityDialect", "SpringStandardDialect"},
+                        new String[]{"Java8TimeDialect", "SpringStandardDialect"},
                         actualDialects)
         );
     }

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Customers</title>
@@ -12,11 +10,7 @@
 
 <h1>顧客一覧</h1>
 
-<!--/* TODO 4-25 sec:authentication属性を利用して、ログイン中のユーザー名（principal.account.name）を表示する */-->
-
-
-<!--/* TODO 4-26 sec:authorize属性を利用して、ADMINロールのみ下記のリンクを表示する */-->
-<a href="insertMain.html" th:href="@{insertMain}"     >新規追加へ</a>
+<a href="insertMain.html" th:href="@{insertMain}">新規追加へ</a>
 
 <table>
     <tr>
@@ -54,8 +48,5 @@
     <!--*/-->
 </table>
 
-<form th:action="@{/logout}" action="index.html" method="post">
-    <input type="submit" value="ログアウト">
-</form>
 </body>
 </html>

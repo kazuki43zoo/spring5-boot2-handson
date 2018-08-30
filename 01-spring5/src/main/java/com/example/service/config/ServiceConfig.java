@@ -9,16 +9,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
-// TODO 2-08 Java Configであることを示すアノテーションを付加する
-
-// TODO 2-09 @Serviceクラスをコンポーネントスキャンするアノテーションを付加する
-
-// TODO 2-10 トランザクション管理を有効化するアノテーションを付加する
-
+@Configuration
+@ComponentScan(basePackages = "com.example.service.impl")
+@EnableTransactionManagement
 public class ServiceConfig {
 
-    // TODO 2-11 Beanであることを示すアノテーションを付加する
-
+    @Bean
     public PlatformTransactionManager transactionManager(DataSource dataSource) {
         // DataSourceTransactionManagerをnewしてreturnする
         // コンストラクタでDataSourceを受け取る

@@ -13,13 +13,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.lang.reflect.Method;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-// TODO 2-12 このテストを実行して、ServiceConfigの実装が正しいかチェックする（テストがグリーンになればOK）
 public class ServiceConfigTest {
 
     ServiceConfig serviceConfig = new ServiceConfig();

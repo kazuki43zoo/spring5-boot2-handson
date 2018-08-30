@@ -79,15 +79,10 @@ Spring Bootでは、`FilterRegistrationBean`をBean定義することでサー�
 ```
 
 # TODO 5-11
-[SecurityConfigクラス](src/main/java/com/example/security/config/SecurityConfig.java)は、Spring Security関連の設定を記述しています。
-Spring Boot 2.0からは、Security関連の設定はJava Configで記述するため、このクラスのほとんどの設定が必要です。
-ただし、`@ComponentScan`のみ不要のため、削除してください。
-
-# TODO 5-12
 [logback.xml](src/main/resources/logback.xml)は、Logback関連の設定を記述しています。
 Spring Bootでは、ログの設定はすべて[application.properties](src/main/resources/application.properties)に記述するため（次のTODO）、logback.xmlはファイルごと削除してください。
 
-# TODO 5-13
+# TODO 5-12
 [application.properties](src/main/resources/application.properties)に、ログレベルなどの設定を記述します。
 下記を追記してください。
 
@@ -95,7 +90,7 @@ Spring Bootでは、ログの設定はすべて[application.properties](src/main
 logging.level.org.springframework.jdbc.core.JdbcTemplate=debug
 ```
 
-# TODO 5-14
+# TODO 5-13
 [Applicationクラス](src/main/java/com/example/Application.java)のmain()メソッドを実行してください。
 ブラウザから http://localhost:8080/ を開いて、01-spring5と同様の挙動であることを確認してください。
 確認後は、アプリケーションを停止してください。

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Customers</title>
@@ -12,9 +10,7 @@
 
 <h1>顧客一覧</h1>
 
-<p>ようこそ、<span sec:authentication="principal.account.name">John</span>さん！</p>
-
-<a href="insertMain.html" th:href="@{insertMain}" sec:authorize="hasRole('ADMIN')">新規追加へ</a>
+<a href="insertMain.html" th:href="@{insertMain}">新規追加へ</a>
 
 <table>
     <tr>
@@ -50,8 +46,5 @@
     <!--*/-->
 </table>
 
-<form th:action="@{/logout}" action="index.html" method="post">
-    <input type="submit" value="ログアウト">
-</form>
 </body>
 </html>

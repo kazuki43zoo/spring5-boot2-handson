@@ -10,12 +10,8 @@ import org.springframework.test.jdbc.JdbcTestUtils;
 
 import java.lang.reflect.Method;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
-// TODO 1-05 このテストを実行して、DataSourceConfigの実装が正しいかチェックする（テストがグリーンになればOK）
 public class DataSourceConfigTest {
 
     @Test

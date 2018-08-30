@@ -23,14 +23,8 @@ import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-// TODO 3-35 このテストを実行して、MvcConfigの実装が正しいかチェックする（addResourceHandlers()のみ、実装の正しさをチェックできません。後ほどブラウザから実行してチェックします）
 public class MvcConfigTest {
 
     MvcConfig mvcConfig = new MvcConfig();
@@ -93,7 +87,7 @@ public class MvcConfigTest {
                 () -> assertTrue(templateResolvers.contains(templateResolver)),
                 () -> assertTrue(templateEngine.getEnableSpringELCompiler()),
                 () -> assertArrayEquals(
-                        new String[]{"Java8TimeDialect", "SpringSecurityDialect", "SpringStandardDialect"},
+                        new String[]{"Java8TimeDialect", "SpringStandardDialect"},
                         actualDialects)
         );
     }

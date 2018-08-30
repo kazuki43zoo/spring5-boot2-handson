@@ -3,7 +3,6 @@ package com.example.persistence.config;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jdbc.core.DataAccessStrategy;
 import org.springframework.data.jdbc.core.DefaultDataAccessStrategy;
@@ -16,13 +15,8 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import javax.sql.DataSource;
 import java.lang.reflect.Method;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-// TODO 1-13 このテストを実行して、JdbcSourceConfigの実装が正しいかチェックする（テストがグリーンになればOK）
 public class JdbcConfigTest {
 
     JdbcConfig jdbcConfig = new JdbcConfig();
@@ -33,14 +27,10 @@ public class JdbcConfigTest {
     @DisplayName("クラスに必要なアノテーションが付加されている")
     public void annotationTest() {
         Configuration configuration = JdbcConfig.class.getAnnotation(Configuration.class);
-        ComponentScan componentScan = JdbcConfig.class.getAnnotation(ComponentScan.class);
         EnableJdbcRepositories enableJdbcRepositories = JdbcConfig.class.getAnnotation(EnableJdbcRepositories.class);
         assertAll("annotations required",
                 () -> assertNotNull(configuration),
-                () -> assertNotNull(componentScan),
                 () -> assertNotNull(enableJdbcRepositories),
-                () -> assertArrayEquals(new String[]{"com.example.persistence.repository.impl"},
-                        componentScan.basePackages()),
                 () -> assertArrayEquals(new String[]{"com.example.persistence.repository"},
                         enableJdbcRepositories.basePackages())
         );

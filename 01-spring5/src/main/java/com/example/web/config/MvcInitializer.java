@@ -2,7 +2,6 @@ package com.example.web.config;
 
 import com.example.persistence.config.DataSourceConfig;
 import com.example.persistence.config.JdbcConfig;
-import com.example.security.config.SecurityConfig;
 import com.example.service.config.ServiceConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

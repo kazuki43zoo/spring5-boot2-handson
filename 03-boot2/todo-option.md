@@ -31,64 +31,13 @@ management.endpoints.web.exposure.include=*
 ```
 
 ## TODO A-03
-[SecurityConfigクラス](src/main/java/com/example/security/config/SecurityConfig.java)で、Actuatorエンドポイントのセキュリティ設定を行います。
-Actuatorエンドポイントには、今回はcurlコマンドなどでアクセスするので、Basic認証を有効化します。
-下記の処理を追記してください。
-
-```java
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin()
-                .loginPage("/login")
-                .permitAll();
-        // TODO この行を追加！！！！！！
-        http.httpBasic();
-        http.authorizeRequests()
-                .mvcMatchers("/insert*").hasRole("ADMIN")
-                .anyRequest().authenticated();
-        http.logout()
-                .invalidateHttpSession(true)
-                .permitAll();
-    }
-```
-
-## TODO A-04
-Actuatorの`/actuator/**`というURLには、`ACTUATOR`ロールのみアクセスできるようにします。
-下記の処理を追記してください。
-
-```java
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin()
-                .loginPage("/login")
-                .permitAll();
-        http.httpBasic();
-        http.authorizeRequests()
-                // TODO この行を追加！！！！！！
-                .requestMatchers(EndpointRequest.toAnyEndpoint()).hasRole("ACTUATOR")
-                .mvcMatchers("/insert*").hasRole("ADMIN")
-                .anyRequest().authenticated();
-        http.logout()
-                .invalidateHttpSession(true)
-                .permitAll();
-    }
-
-```
-
-> `EndpointRequest`クラスは2つありますので注意してください。
-> 今回利用するのは`org.springframework.boot.actuate.autoconfigure.security.servlet`のものです。
-
-> `ACTUATOR`ロールのユーザーは、[data.sql](src/main/resources/data.sql)に定義済みです。
-> （ユーザー名 = actuator、パスワード = actuator）
-
-## TODO A-05
 [Applicationクラス](src/main/java/com/example/Application.java)のmain()メソッドを実行してください。
 下記のcurlコマンドで、Actuatorの各エンドポイントにアクセスしてください。
 
 - `/actuator` (Actuatorエンドポイント一覧)
 
 ```bash
-$ curl -v -X GET -u actuator:actuator http://localhost:8080/actuator | jq
+$ curl -v -X GET http://localhost:8080/actuator | jq
 (ヘッダー等は省略)
 {
   "_links": {
@@ -120,7 +69,7 @@ $ curl -v -X GET -u actuator:actuator http://localhost:8080/actuator | jq
 - `/health` (アプリケーションの状態)
 
 ```bash
-$ curl -v -X GET -u actuator:actuator http://localhost:8080/actuator/health | jq
+$ curl -v -X GET http://localhost:8080/actuator/health | jq
 (ヘッダー等は省略)
 {
   "status": "UP"
@@ -130,7 +79,7 @@ $ curl -v -X GET -u actuator:actuator http://localhost:8080/actuator/health | jq
 - `/env` (環境変数など設定値の一覧)
 
 ```bash
-$ curl -v -X GET -u actuator:actuator http://localhost:8080/actuator/env | jq
+$ curl -v -X GET http://localhost:8080/actuator/env | jq
 (ヘッダー等は省略)
 {
   "activeProfiles": [],

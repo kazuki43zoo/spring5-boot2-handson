@@ -28,14 +28,10 @@ public class JdbcConfigTest {
     @DisplayName("クラスに必要なアノテーションが付加されている")
     public void annotationTest() {
         Configuration configuration = JdbcConfig.class.getAnnotation(Configuration.class);
-        ComponentScan componentScan = JdbcConfig.class.getAnnotation(ComponentScan.class);
         EnableJdbcRepositories enableJdbcRepositories = JdbcConfig.class.getAnnotation(EnableJdbcRepositories.class);
         assertAll("annotations required",
                 () -> assertNotNull(configuration),
-                () -> assertNotNull(componentScan),
                 () -> assertNotNull(enableJdbcRepositories),
-                () -> assertArrayEquals(new String[]{"com.example.persistence.repository.impl"},
-                        componentScan.basePackages()),
                 () -> assertArrayEquals(new String[]{"com.example.persistence.repository"},
                         enableJdbcRepositories.basePackages())
         );

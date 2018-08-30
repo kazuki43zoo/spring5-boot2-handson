@@ -2,7 +2,7 @@
 <!DOCTYPE logback>
 <configuration>
 
-    <!-- TODO 5-12 logback.xmlを削除する -->
+    <!-- TODO 5-11 logback.xmlを削除する -->
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>

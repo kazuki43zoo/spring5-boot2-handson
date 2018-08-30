@@ -15,7 +15,6 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.version>5.0.6.RELEASE</spring.version>
-        <spring-security.version>5.0.5.RELEASE</spring-security.version>
         <junit-jupiter.version>5.2.0</junit-jupiter.version>
     </properties>
 
@@ -37,12 +36,6 @@
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-java8time</artifactId>
             <version>3.0.1.RELEASE</version>
-        </dependency>
-        <!-- ThymeleafでSpring Securityを利用するDialect -->
-        <dependency>
-            <groupId>org.thymeleaf.extras</groupId>
-            <artifactId>thymeleaf-extras-springsecurity4</artifactId>
-            <version>3.0.2.RELEASE</version>
         </dependency>
         <!-- Servlet API（フィルターなどを利用するために必要） -->
         <dependency>
@@ -77,18 +70,6 @@
             <version>1.4.197</version>
             <scope>runtime</scope>
         </dependency>
-        <!-- Spring Security Web -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
-        <!-- Spring Security Config -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
 
         <!-- JUnitテスト内でSpringを利用する -->
         <dependency>
@@ -116,13 +97,6 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit-jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- Spring Security Test -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <version>${spring-security.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- hamcrest -->

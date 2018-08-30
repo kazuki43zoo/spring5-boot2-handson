@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 
 public class Application {
 
-    // TODO 5-14 main()メソッドを実行して、ブラウザから http://localhost:8080/ にアクセスする
+    // TODO 5-13 main()メソッドを実行して、ブラウザから http://localhost:8080/ にアクセスする
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }

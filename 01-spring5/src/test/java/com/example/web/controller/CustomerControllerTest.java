@@ -25,14 +25,8 @@ import java.lang.reflect.Method;
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-// TODO 3-36 このテストを実行して、CustomerControllerの実装が正しいかチェックする（グリーンになればOK）
 @SpringJUnitWebConfig(classes = {DataSourceConfig.class, JdbcConfig.class,
         ServiceConfig.class, MvcConfig.class})
 public class CustomerControllerTest {
